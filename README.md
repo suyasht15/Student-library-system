@@ -73,10 +73,6 @@ streamlit run clg_lib_sys.py
 - [ ] **Improve UI** with better styling.
 - [ ] **Enable Book Return Management**.
 
----
-
-## 📜 License
-This project is licensed under the **MIT License**.
 
 ---
 
