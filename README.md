@@ -36,10 +36,43 @@ conda activate library-system
 ```
 
 ### 4️⃣ Set Up Google Sheets API
-1. Create a **Google Cloud Project** and enable the **Google Sheets API**.
-2. Create a service account and download the `credentials.json` file.
-3. Place the `credentials.json` file in the project directory.
-4. Share your Google Sheet with the service account email.
+#### 🔑 Steps to Create `credentials.json` for Google Sheets API
+
+To integrate your **Student Library Book Record System** with **Google Sheets**, you need to create a **service account** and download the `credentials.json` file. Follow the steps below:
+
+#### **📌 Step 1: Create a Google Cloud Project**
+1. Go to **[Google Cloud Console](https://console.cloud.google.com/)**.
+2. Click **Select a Project** → **New Project**.
+3. Enter a project name (e.g., `Library Management System`) and click **Create**.
+
+#### **📌 Step 2: Enable Google Sheets API**
+1. In the **Google Cloud Console**, search for **Google Sheets API**.
+2. Click on **Enable**.
+
+#### **📌 Step 3: Create a Service Account**
+1. In the **Google Cloud Console**, go to **IAM & Admin** → **Service Accounts**.
+2. Click **Create Service Account**.
+3. Enter a **Service Account Name** (e.g., `library-records`).
+4. Click **Create and Continue**.
+5. Assign the role **Editor** or **Owner**.
+6. Click **Done**.
+
+#### **📌 Step 4: Generate Credentials JSON**
+1. Open the newly created service account.
+2. Go to the **Keys** tab → Click **Add Key** → **Create new key**.
+3. Select **JSON** and click **Create**.
+4. A file named **`credentials.json`** will be downloaded.
+
+#### **📌 Step 5: Share Google Sheet Access with Service Account**
+1. Open your **Google Sheet** where records will be stored.
+2. Click **Share** and enter the service account email (found inside `credentials.json` under `client_email`).
+3. Set permissions to **Editor**.
+
+#### **📌 Step 6: Place `credentials.json` in Your Project**
+1. Move the `credentials.json` file to your project directory.
+2. Ensure your Python script correctly references this file.
+
+---
 
 ### 5️⃣ Run the Application
 ```bash
@@ -73,6 +106,10 @@ streamlit run clg_lib_sys.py
 - [ ] **Improve UI** with better styling.
 - [ ] **Enable Book Return Management**.
 
+---
+
+## 📜 License
+This project is licensed under the **MIT License**.
 
 ---
 
